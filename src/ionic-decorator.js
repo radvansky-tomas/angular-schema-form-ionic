@@ -49,7 +49,8 @@ angular.module('schemaForm').config(['schemaFormDecoratorsProvider', 'sfBuilderP
             'radios': {template: base + 'radios.html', builder: defaults},
             'toggle': {template: base + 'toggle.html', builder: defaults},
             'default': {template: base + 'default.html', builder: defaults},
-            'section': {template: base + 'section.html', builder: [sfField, simpleTransclusion, condition]}
+            'section': {template: base + 'section.html', builder: [sfField, simpleTransclusion, condition]},
+            'range': {template: base + 'range.html', builder: defaults}
         }, []);
 
     }]);
