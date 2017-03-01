@@ -1,5 +1,5 @@
 <label for="{{form.key.slice(-1)[0]}}"
-       class="item item-input range range-positive schema-form-select {{form.htmlClass}}"
+       class="item item-input range range-positive schema-form-range {{form.htmlClass}}"
        ng-class="{'has-error': hasError(), 'has-success': hasSuccess(), 'has-feedback': form.feedback !== false}">
     <div ng-show="showTitle()" class="input-label {{form.labelHtmlClass}}">
         {{form.title}}
@@ -11,6 +11,9 @@
            ng-disabled="form.readonly"
            name="{{form.key.slice(-1)[0]}}"
            type="range">
+
+    <input style="max-width: 50px; text-align: center; background-position: bottom" type="text"
+           maxlength="3" ng-disabled="form.readonly" sf-field-model="replaceAll" ng-model="$$value$$">
 
     <!-- Help block for help text and error message -->
     <p class="help-block" sf-message="form.description"></p>
