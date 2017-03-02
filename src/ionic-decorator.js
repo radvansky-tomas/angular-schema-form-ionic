@@ -50,7 +50,8 @@ angular.module('schemaForm').config(['schemaFormDecoratorsProvider', 'sfBuilderP
             'toggle': {template: base + 'toggle.html', builder: defaults},
             'default': {template: base + 'default.html', builder: defaults},
             'section': {template: base + 'section.html', builder: [sfField, simpleTransclusion, condition]},
-            'range': {template: base + 'range.html', builder: defaults}
+            'range': {template: base + 'range.html', builder: defaults},
+            'separator': {template: base + 'separator.html', builder: defaults}
         }, []);
 
     }]);
