@@ -5,5 +5,6 @@
   </div>
 
   <!-- Help block for help text and error message -->
-  <p class="help-block" ng-show="form.description" ng-bind-html="form.description"></p>
+
+  <p class="help-block {{form.errorClass}}" ng-show="form.description" ng-bind-html="form.description"></p>
 </fieldset>

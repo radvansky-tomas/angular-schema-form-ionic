@@ -33,5 +33,5 @@
            name="{{form.key.slice(-1)[0]}}"
            aria-describedby="{{form.key.slice(-1)[0] + 'Status'}}">
     <!-- Help block for help text and error message -->
-    <p class="help-block" sf-message="form.description"></p>
+    <p class="form-error {{form.errorClass}}" sf-message="form.description"></p>
 </label>
