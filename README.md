@@ -35,6 +35,61 @@ then load the `ionic-decorator.min.js` file in your html. Make sure this is the 
 
 If you have included the file properly, the decorator should automatically work.
 
+### Range component
+{
+ "key": "hygiene",
+ "type": "range",
+ "min": '0',
+ "max": '2',
+ "htmlClass": "range range-positive",
+ "titleMap": [
+  {value: "1", name: "first"},
+  {value: "3", name: "middle"},
+  {value: "5", name: "last"}
+ ]
+}
+
+### GridSelect component
+"location": {
+          "title": "Selected Locations",
+          type: "array",
+          items: {
+            title: "Name",
+            type: "string"
+          }
+        }
+        
+{
+        "key": "location",
+        "type": "gridSelect",
+        "template": "<p>{{item.Name}}</p>",
+        "layoutHtmlClass":"",
+        "selfHtmlClass":"size-1of4 md-half sm-full",
+        "titleMap": [
+          {
+            value: {
+              locationId: 123,
+              locationLevel: "ward1"
+            },
+            Name: "Location123"
+          },
+          {
+            value: {
+              locationId: 321,
+              locationLevel: "ward1"
+            },
+            Name: "Location321"
+          },
+          {
+            value: {
+              locationId: 555,
+              locationLevel: "ward2"
+            },
+            Name: "Location555"
+          }
+        ]
+      }
+      
 ## Known issues
 
  - Ionic by default styles `fieldset` with a border and padding, which looks weird when used to wrap Ionic `item`s. We would suggest adding your own css class to all `fieldset` types to fix the styling.
