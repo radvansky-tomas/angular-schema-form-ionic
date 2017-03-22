@@ -1,8 +1,9 @@
 angular.module("schemaForm").run(["$templateCache", function($templateCache) {$templateCache.put("decorators/ionic/checkbox.html","<label for=\"{{form.key.slice(-1)[0]}}\" class=\"item item-checkbox schema-form-{{form.type}} {{form.htmlClass}}\" ng-class=\"{\'has-error\': hasError(), \'has-success\': hasSuccess(), \'has-feedback\': form.feedback !== false}\"><div class=\"checkbox checkbox-input-hidden disable-pointer-events\"><input sf-field-model=\"\" type=\"checkbox\" sf-changed=\"form\" ng-disabled=\"form.readonly\" schema-validate=\"form\" class=\"{{form.fieldHtmlClass}}\" name=\"{{form.key.slice(-1)[0]}}\" aria-label=\"{{form.title}}\"> <i class=\"checkbox-icon\"></i></div><div class=\"item-content disable-pointer-events {{form.labelHtmlClass}}\">{{form.title}}</div><p class=\"form-error {{form.errorClass}}\" sf-message=\"form.description\"></p></label>");
 $templateCache.put("decorators/ionic/default.html","<label for=\"{{form.key.slice(-1)[0]}}\" class=\"item item-input schema-form-{{form.type}} {{form.htmlClass}}\" ng-class=\"{\'has-error\': hasError(), \'has-success\': hasSuccess(), \'has-feedback\': form.feedback !== false}\"><span ng-show=\"showTitle()\" class=\"input-label {{form.labelHtmlClass}}\" sf-field-model=\"replaceAll\" ng-model=\"$$value$$\" ng-class=\"{\'has-input\': $$value$$}\">{{form.title}}</span><div ng-if=\"form.accessory\" layout=\"row\"><input sf-field-model=\"\" ng-show=\"form.key\" type=\"{{form.type}}\" step=\"any\" sf-changed=\"form\" placeholder=\"{{form.placeholder}}\" id=\"{{form.key.slice(-1)[0]}}\" ng-class=\"form.fieldHtmlClass\" ng-disabled=\"form.readonly\" schema-validate=\"form\" name=\"{{form.key.slice(-1)[0]}}\" aria-describedby=\"{{form.key.slice(-1)[0] + \'Status\'}}\"> <span class=\"{{form.accessoryClass}}\">{{form.accessory}}</span></div><input ng-if=\"form.accessory == undefined\" sf-field-model=\"\" ng-show=\"form.key\" type=\"{{form.type}}\" step=\"any\" sf-changed=\"form\" placeholder=\"{{form.placeholder}}\" id=\"{{form.key.slice(-1)[0]}}\" ng-class=\"form.fieldHtmlClass\" ng-disabled=\"form.readonly\" schema-validate=\"form\" name=\"{{form.key.slice(-1)[0]}}\" aria-describedby=\"{{form.key.slice(-1)[0] + \'Status\'}}\"><p class=\"form-error {{form.errorClass}}\" sf-message=\"form.description\"></p></label>");
 $templateCache.put("decorators/ionic/fieldset.html","<fieldset ng-disabled=\"form.readonly\" class=\"schema-form-fieldset {{form.htmlClass}}\"><div ng-show=\"showTitle()\" class=\"item item-divider\">{{ form.title }}</div><p class=\"help-block {{form.errorClass}}\" ng-show=\"form.description\" ng-bind-html=\"form.description\"></p></fieldset>");
+$templateCache.put("decorators/ionic/grid-select.html","<div sf-field-model=\"sf-new-array\" sf-new-array=\"\" ng-class=\"{\'has-error\': hasError(), \'has-success\': hasSuccess(), \'has-feedback\': form.feedback !== false}\"><label class=\"control-label {{::form.labelHtmlClass}}\" sf-field-model=\"\" schema-validate=\"form\" ng-show=\"showTitle()\">{{form.title}}</label><ion-list layout=\"{{form.layoutHtmlClass}}\" ng-repeat=\"item in form.titleMap track by $index\"><ion-checkbox self=\"{{form.selfHtmlClass}}\" ng-disabled=\"form.readonly\" sf-changed=\"form\" class=\"{{form.fieldHtmlClass}}\" ng-model=\"titleMapValues[$index]\" name=\"{{fieldId(true, false)}}\"><div bind-html-compile=\"form.template\"></div></ion-checkbox></ion-list><p class=\"help-block {{form.errorClass}}\" sf-message=\"form.description\"></p></div>");
 $templateCache.put("decorators/ionic/radios.html","<div class=\"list schema-form-radios {{form.htmlClass}}\" ng-class=\"{\'has-error\': hasError(), \'has-success\': hasSuccess(), \'has-feedback\': form.feedback !== false}\"><label class=\"item item-radio\" ng-repeat=\"item in form.titleMap\"><input type=\"radio\" class=\"{{form.fieldHtmlClass}}\" sf-changed=\"form\" ng-disabled=\"form.readonly\" sf-field-model=\"\" ng-value=\"item.value\" name=\"{{form.key.join(\'.\')}}\"><div class=\"radio-content\"><div class=\"item-content disable-pointer-events {{form.labelHtmlClass}}\" ng-bind-html=\"item.name\"></div><i class=\"radio-icon disable-pointer-events icon ion-checkmark\"></i></div><p class=\"help-block {{form.errorClass}}\" sf-message=\"form.description\"></p></label></div>");
-$templateCache.put("decorators/ionic/range.html","<label for=\"{{form.key.slice(-1)[0]}}\" class=\"item item-input range range-positive schema-form-range {{form.htmlClass}}\" ng-class=\"{\'has-error\': hasError(), \'has-success\': hasSuccess(), \'has-feedback\': form.feedback !== false}\"><div ng-show=\"showTitle()\" class=\"input-label {{form.labelHtmlClass}}\">{{form.title}}</div><input sf-field-model=\"\" sf-changed=\"form\" ng-class=\"form.fieldHtmlClass\" ng-disabled=\"form.readonly\" name=\"{{form.key.slice(-1)[0]}}\" type=\"range\"> <input style=\"max-width: 50px; text-align: center; background-position: bottom\" type=\"text\" maxlength=\"3\" ng-disabled=\"form.readonly\" sf-field-model=\"replaceAll\" ng-model=\"$$value$$\"><p class=\"help-block {{form.errorClass}}\" sf-message=\"form.description\"></p></label>");
+$templateCache.put("decorators/ionic/range.html","<label for=\"{{form.key.slice(-1)[0]}}\" class=\"item item-input range range-positive schema-form-range {{form.htmlClass}}\" ng-class=\"{\'has-error\': hasError(), \'has-success\': hasSuccess(), \'has-feedback\': form.feedback !== false}\"><div ng-show=\"showTitle()\" class=\"input-label {{form.labelHtmlClass}}\">{{form.title}}</div><input custom-range=\"\" step=\"$$value$$.step\" value=\"$$value$$.value\" desc=\"$$value$$.desc\" map=\"form.titleMap\" sf-field-model=\"replaceAll\" ng-model=\"$$value$$.step\" sf-changed=\"form\" ng-class=\"form.fieldHtmlClass\" ng-disabled=\"form.readonly\" name=\"{{form.key.slice(-1)[0]}}\" min=\"{{form.min}}\" max=\"{{form.max}}\" type=\"range\"> <input style=\"max-width: 50px; text-align: center; background-position: bottom\" type=\"text\" maxlength=\"3\" ng-disabled=\"true\" sf-field-model=\"replaceAll\" ng-model=\"$$value$$.value\"> <span sf-field-model=\"replaceAll\" ng-model=\"$$value$$.desc\" model-to-html=\"\"></span><p class=\"help-block {{form.errorClass}}\" sf-message=\"form.description\"></p></label>");
 $templateCache.put("decorators/ionic/section.html","<div layout=\"{{form.fieldHtmlClass}}\" self=\"{{form.labelHtmlClass}}\" class=\"schema-form-section {{::form.htmlClass + \' \' + idClass}}\" sf-key-controller=\"\" sf-parent-key=\"[{{form.key.join(\'][\')}}]\" sf-index=\"{{$index}}\"></div>");
 $templateCache.put("decorators/ionic/select.html","<label for=\"{{form.key.slice(-1)[0]}}\" class=\"item item-input item-select schema-form-select {{form.htmlClass}}\" ng-class=\"{\'has-error\': hasError(), \'has-success\': hasSuccess(), \'has-feedback\': form.feedback !== false}\"><div ng-show=\"showTitle()\" class=\"input-label {{form.labelHtmlClass}}\">{{form.title}}</div><select ng-if=\"form.multiple\" multiple=\"\" sf-field-model=\"\" sf-changed=\"form\" id=\"{{form.key.slice(-1)[0]}}\" ng-class=\"form.fieldHtmlClass\" ng-disabled=\"form.readonly\" schema-validate=\"form\" name=\"{{form.key.slice(-1)[0]}}\" ng-options=\"item.value as item.name group by item.group for item in form.titleMap\"></select><select ng-if=\"form.multiple == undefined\" sf-field-model=\"\" sf-changed=\"form\" id=\"{{form.key.slice(-1)[0]}}\" ng-class=\"form.fieldHtmlClass\" ng-disabled=\"form.readonly\" schema-validate=\"form\" name=\"{{form.key.slice(-1)[0]}}\" ng-options=\"item.value as item.name group by item.group for item in form.titleMap\"></select><p class=\"help-block {{form.errorClass}}\" sf-message=\"form.description\"></p></label>");
 $templateCache.put("decorators/ionic/separator.html","<div layout=\"{{form.fieldHtmlClass}}\" self=\"{{form.labelHtmlClass}}\" class=\"schema-form-separator item item-divider {{::form.htmlClass + \' \' + idClass}}\" sf-key-controller=\"\" ng-show=\"showTitle()\">{{ form.title }}</div>");
@@ -19,8 +20,18 @@ angular.module('schemaForm').config(['schemaFormDecoratorsProvider', 'sfBuilderP
         var sfField = sfBuilderProvider.builders.sfField;
         var condition = sfBuilderProvider.builders.condition;
 
+        // var customRange = function (args) {
+        //     args.form.onRangeChanged = function (model) {
+        //         var currentStep = parseInt(model.step);
+        //         var currentValue = args.form.titleMap[currentStep];
+        //         model.value = currentValue.value;
+        //         model.desc = currentValue.name;
+        //     }
+        // };
+
         var selectPlaceholder = function (args) {
             if (args.form.placeholder) {
+                var selectBox = args.fieldFrag.querySelector('select');
                 var selectBox = args.fieldFrag.querySelector('select');
                 var option = document.createElement('option');
                 option.setAttribute('value', '');
@@ -62,28 +73,29 @@ angular.module('schemaForm').config(['schemaFormDecoratorsProvider', 'sfBuilderP
             'default': {template: base + 'default.html', builder: defaults},
             'section': {template: base + 'section.html', builder: [sfField, simpleTransclusion, condition]},
             'range': {template: base + 'range.html', builder: defaults},
+            'gridSelect': {template: base + 'grid-select.html', builder: defaults},
             'separator': {template: base + 'separator.html', builder: defaults}
         }, []);
 
     }]);
 
-angular.module('schemaForm').directive('stringToNumber', function() {
+angular.module('schemaForm').directive('stringToNumber', function () {
     return {
         scope: false,
         require: 'ngModel',
-        link: function(scope, element, attrs, ngModel) {
-            var once = scope.$watch(attrs.stringToNumber, function(schema) {
+        link: function (scope, element, attrs, ngModel) {
+            var once = scope.$watch(attrs.stringToNumber, function (schema) {
                 if (!schema) {
                     return;
                 }
 
-                var isNumber  = schema.type.indexOf('number') !== -1;
+                var isNumber = schema.type.indexOf('number') !== -1;
                 var isInteger = schema.type.indexOf('integer') !== -1;
-                var numberRE  = /^[0-9]*$/;
+                var numberRE = /^[0-9]*$/;
                 // Use index of since type can be either an array with two values or a string.
                 if (isNumber || isInteger) {
                     // The timing here seems to work. i.e. we get in before schema-validate
-                    ngModel.$parsers.push(function(viewValue) {
+                    ngModel.$parsers.push(function (viewValue) {
                         var value;
                         if (isNumber) {
                             value = parseFloat(viewValue);
@@ -92,7 +104,7 @@ angular.module('schemaForm').directive('stringToNumber', function() {
                             // get float -> integer parsing behind the scenes.
                             value = parseInt(viewValue, 10);
                         }
-                        console.log('parser', numberRE.test(viewValue), viewValue, value)
+                        console.log('parser', numberRE.test(viewValue), viewValue, value);
                         if (value === undefined || isNaN(value)) {
                             //Let the validation fail. @FIXME: it fails with "required" for some reason.
                             return viewValue;
@@ -103,6 +115,71 @@ angular.module('schemaForm').directive('stringToNumber', function() {
 
                 once();
             });
+        }
+    };
+});
+
+angular.module('schemaForm').directive('modelToHtml', function () {
+    return {
+        require: 'ngModel',
+        link: function (scope, element, attrs, ngModel) {
+            scope.$watch(function () {
+                return ngModel.$modelValue;
+            }, function (newValue) {
+                element[0].innerHTML = newValue;
+            });
+        }
+    };
+});
+
+angular.module('schemaForm').directive('bindHtmlCompile', ['$compile', function ($compile) {
+    return {
+        restrict: 'A',
+        link: function (scope, element, attrs) {
+            scope.$watch(function () {
+                return scope.$eval(attrs.bindHtmlCompile);
+            }, function (value) {
+                // In case value is a TrustedValueHolderType, sometimes it
+                // needs to be explicitly called into a string in order to
+                // get the HTML string.
+                element.html(value && value.toString());
+                // If scope is provided use it, otherwise use parent scope
+                var compileScope = scope;
+                if (attrs.bindHtmlScope) {
+                    compileScope = scope.$eval(attrs.bindHtmlScope);
+                }
+                $compile(element.contents())(compileScope);
+            });
+        }
+    };
+}]);
+
+angular.module('schemaForm').directive('customRange', function () {
+    return {
+        scope: {
+            step: '=',
+            value: '=',
+            desc: '=',
+            map: '='
+        },
+        link: function (scope, element, attrs, ngModel) {
+            scope.$watch(function () {
+                return scope.step;
+            }, function (newValue) {
+                if ((scope.map != undefined) && (newValue != undefined)) {
+                    var parsedIndex = parseInt(newValue);
+                    if (!isNaN(parsedIndex)) {
+                        var currentValue = scope.map[parsedIndex];
+                        if (currentValue != undefined) {
+                            scope.value = currentValue.value;
+                            scope.desc = currentValue.name;
+                            return;
+                        }
+                    }
+                }
+                scope.value = scope.step;
+            });
+
         }
     };
 });

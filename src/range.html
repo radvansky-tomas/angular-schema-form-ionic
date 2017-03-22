@@ -5,15 +5,25 @@
         {{form.title}}
     </div>
 
-    <input sf-field-model
+    <input custom-range
+           step="$$value$$.step"
+           value="$$value$$.value"
+           desc="$$value$$.desc"
+           map="form.titleMap"
+           sf-field-model="replaceAll"
+           ng-model="$$value$$.step"
            sf-changed="form"
            ng-class="form.fieldHtmlClass"
            ng-disabled="form.readonly"
            name="{{form.key.slice(-1)[0]}}"
+           min="{{form.min}}"
+           max="{{form.max}}"
            type="range">
 
     <input style="max-width: 50px; text-align: center; background-position: bottom" type="text"
-           maxlength="3" ng-disabled="form.readonly" sf-field-model="replaceAll" ng-model="$$value$$">
+           maxlength="3" ng-disabled="true" sf-field-model="replaceAll" ng-model="$$value$$.value">
+
+    <span sf-field-model="replaceAll" ng-model="$$value$$.desc" model-to-html></span>
 
     <!-- Help block for help text and error message -->
     <p class="help-block {{form.errorClass}}" sf-message="form.description"></p>
