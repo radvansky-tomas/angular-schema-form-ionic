@@ -1,6 +1,6 @@
 {
   "name": "angular-schema-form-ionic",
-  "version": "0.5.1",
+  "version": "0.5.9",
   "description": "Ionic 1 decorator for Angular Schema Form",
   "main": "dist/ionic-decorator.js",
   "scripts": {
