@@ -15,16 +15,15 @@
            sf-changed="form"
            ng-class="form.fieldHtmlClass"
            ng-disabled="form.readonly"
-           schema-validate="form"
            name="{{form.key.slice(-1)[0]}}"
            min="{{form.min}}"
            max="{{form.max}}"
            type="range">
 
     <input style="max-width: 50px; text-align: center; background-position: bottom" type="text"
-           maxlength="3" ng-disabled="true" sf-field-model="replaceAll" ng-model="$$value$$.value">
+           maxlength="3" ng-disabled="true" sf-field-model="replaceAll" ng-model="$$value$$.value" schema-validate="form">
 
-    <span sf-field-model="replaceAll" ng-model="$$value$$.desc" model-to-html></span>
+    <span sf-field-model="replaceAll" ng-model="$$value$$.desc" ng-if="$$value$$.desc" model-to-html></span>
 
     <!-- Help block for help text and error message -->
     <p class="help-block {{form.errorClass}}" sf-message="form.description"></p>
