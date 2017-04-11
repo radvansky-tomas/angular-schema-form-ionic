@@ -21,7 +21,11 @@
            type="range">
 
     <input style="max-width: 50px; text-align: center; background-position: bottom" type="text"
-           maxlength="3" ng-disabled="true" sf-field-model="replaceAll" ng-model="$$value$$.value" schema-validate="form">
+           maxlength="3" ng-disabled="true" sf-field-model="replaceAll" ng-model="$$value$$.value">
+
+    <div sf-field-model="replaceAll" ng-model="$$value$$" schema-validate="form">
+        <!--Dummy object to perform validation on whole object-->
+    </div>
 
     <span sf-field-model="replaceAll" ng-model="$$value$$.desc" ng-if="$$value$$.desc" model-to-html></span>
 
