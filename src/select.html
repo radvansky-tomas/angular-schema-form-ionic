@@ -1,6 +1,7 @@
 <label for="{{form.key.slice(-1)[0]}}"
        class="item item-input item-select schema-form-select {{form.htmlClass}}"
        ng-class="{'has-error': hasError(), 'has-success': hasSuccess(), 'has-feedback': form.feedback !== false}">
+
   <div ng-show="showTitle()" class="input-label {{form.labelHtmlClass}}">
     {{form.title}}
   </div>
