@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a8731cfa-1080-4f42-82ac-c5fd25383abe" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/ionic-decorator.js" afterPath="$PROJECT_DIR$/dist/ionic-decorator.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/ionic-decorator.min.js" afterPath="$PROJECT_DIR$/dist/ionic-decorator.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ionic-decorator.js" afterPath="$PROJECT_DIR$/src/ionic-decorator.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/range.html" afterPath="$PROJECT_DIR$/src/range.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/range-directive.html" afterPath="$PROJECT_DIR$/src/range-directive.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -23,7 +21,18 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="range-directive.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/range-directive.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="10" lean-forward="true" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -62,9 +71,9 @@
         <option value="$PROJECT_DIR$/src/select.html" />
         <option value="$PROJECT_DIR$/src/separator.html" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/src/range-directive.html" />
         <option value="$PROJECT_DIR$/src/range.html" />
         <option value="$PROJECT_DIR$/src/ionic-decorator.js" />
+        <option value="$PROJECT_DIR$/src/range-directive.html" />
       </list>
     </option>
   </component>
@@ -281,15 +290,16 @@
       <workItem from="1491986607792" duration="544000" />
       <workItem from="1492698090332" duration="177000" />
       <workItem from="1493110559173" duration="3994000" />
-      <workItem from="1493201803551" duration="5672000" />
+      <workItem from="1493201803551" duration="5801000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60104000" />
+    <option name="totallyTimeSpent" value="60233000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="977" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24583334" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -637,14 +647,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/range-directive.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="44" lean-forward="true" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ionic-decorator.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="413">
@@ -665,6 +667,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/range-directive.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="10" lean-forward="true" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
           <folding />
         </state>
       </provider>
