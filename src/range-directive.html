@@ -1,0 +1,27 @@
+<div ng-attr-layout="{{form.layoutFlex}}" ng-attr-self="{{form.selfFlex}}">
+    <div ng-attr-self="{{form.labelFlexClass}}" ng-show="showTitle()"
+         class="input-label {{form.labelHtmlClass}}">
+        {{form.title}}
+    </div>
+
+    <input ng-attr-self="{{form.fieldFlex}}"
+           custom-range
+           step="modelValue.step"
+           value="modelValue.value"
+           desc="modelValue.desc"
+           map="form.titleMap"
+           ng-model="modelValue.step"
+           ng-class="form.fieldHtmlClass"
+           ng-disabled="form.readonly"
+           name="{{form.key.slice(-1)[0]}}"
+           min="{{form.min}}"
+           max="{{form.max}}"
+           type="range">
+
+    <input ng-attr-self="{{form.numberFlex}}" ng-class="form.numberHtmlClass"
+           style="max-width: 50px; text-align: center; background-position: bottom" type="text"
+           maxlength="3" ng-disabled="true" ng-model="modelValue.value">
+
+    <span ng-attr-self="{{form.descFlex}}" ng-class="form.descHtmlClass" ng-model="modelValue.desc"
+          ng-if="modelValue.desc" model-to-html></span>
+</div>

@@ -144,6 +144,27 @@ angular.module('schemaForm').directive('bindHtmlCompile', ['$compile', function 
     };
 }]);
 
+angular.module('schemaForm').directive('hiddenDiv', function () {
+    return {
+        scope: {
+            form: '=formObject',
+            modelValue: '=ngModel'
+        },
+        require: 'ngModel',
+        templateUrl: 'decorators/ionic/range-directive.html',
+        link: function (scope, element, attrs, ngModel) {
+            scope.$watch(function () {
+                return scope.modelValue.step;
+            }, function (newValue) {
+                if (newValue !== undefined) {
+                    ngModel.$setViewValue(scope.modelValue); //assign back
+                    ngModel.$validate();
+                }
+            });
+        }
+    };
+});
+
 angular.module('schemaForm').directive('customRange', function () {
     return {
         scope: {

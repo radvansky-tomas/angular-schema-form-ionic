@@ -2,33 +2,9 @@
        class="item item-input range range-positive schema-form-range {{form.htmlClass}}"
        ng-class="{'has-error': hasError(), 'has-success': hasSuccess(), 'has-feedback': form.feedback !== false}">
 
-    <div ng-attr-layout="{{form.layoutFlex}}" ng-attr-self="{{form.selfFlex}}">
-        <div ng-attr-self="{{form.labelFlexClass}}" ng-show="showTitle()" class="input-label {{form.labelHtmlClass}}">
-            {{form.title}}
-        </div>
+    <hidden-div sf-field-model schema-validate="form" form-object="form">
 
-        <input ng-attr-self="{{form.fieldFlex}}"
-               custom-range
-               step="$$value$$.step"
-               value="$$value$$.value"
-               desc="$$value$$.desc"
-               map="form.titleMap"
-               sf-field-model="replaceAll"
-               ng-model="$$value$$.step"
-               sf-changed="form"
-               ng-class="form.fieldHtmlClass"
-               ng-disabled="form.readonly"
-               name="{{form.key.slice(-1)[0]}}"
-               min="{{form.min}}"
-               max="{{form.max}}"
-               type="range">
-
-        <input ng-attr-self="{{form.numberFlex}}" ng-class="form.numberHtmlClass" style="max-width: 50px; text-align: center; background-position: bottom" type="text"
-               maxlength="3" ng-disabled="true" sf-field-model="replaceAll" ng-model="$$value$$.value"
-               schema-validate="form">
-
-        <span ng-attr-self="{{form.descFlex}}" ng-class="form.descHtmlClass" sf-field-model="replaceAll" ng-model="$$value$$.desc" ng-if="$$value$$.desc" model-to-html></span>
-    </div>
+    </hidden-div>
     <!-- Help block for help text and error message -->
     <p class="help-block {{form.errorClass}}" sf-message="form.description"></p>
 </label>
